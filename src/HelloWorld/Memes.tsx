@@ -3,10 +3,11 @@ import { AbsoluteFill, Img, useCurrentFrame,
 import {Meme} from './Meme';
 
 export const Memes: React.FC<{  }> = ({  }) => {
-
+  const frame = useCurrentFrame();
+  let number = Math.floor(frame / 60);
   return (
     <AbsoluteFill>
-      <Meme MemeNo={1}/>
+      <Meme MemeNo={number}/>
     </AbsoluteFill>
   );
 };
