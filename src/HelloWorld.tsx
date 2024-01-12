@@ -6,7 +6,7 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
-import {Logo} from './HelloWorld/Logo';
+import {Memes} from './HelloWorld/Memes';
 import {Subtitle} from './HelloWorld/Subtitle';
 import {Title} from './HelloWorld/Title';
 import {z} from 'zod';
@@ -59,17 +59,13 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 	return (
 		<AbsoluteFill style={{backgroundColor: 'white'}}>
 			<AbsoluteFill style={{opacity}}>
-				<AbsoluteFill style={{transform: `translateY(${logoTranslation}px)`}}>
-					<Logo logoColor1={logoColor1} logoColor2={logoColor2} />
-				</AbsoluteFill>
 				{/* Sequences can shift the time for its children! */}
-				<Sequence from={35}>
-					<Title titleText={propOne} titleColor={propTwo} />
+				{
+				<Sequence from={35} >
+					<Memes/>
 				</Sequence>
+				}
 				{/* The subtitle will only enter on the 75th frame. */}
-				<Sequence from={75}>
-					<Subtitle />
-				</Sequence>
 			</AbsoluteFill>
 		</AbsoluteFill>
 	);
